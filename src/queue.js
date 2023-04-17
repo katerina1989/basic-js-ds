@@ -31,16 +31,16 @@ class Queue {
       this.last = this.head;
     } else {
       this.last.next = new ListNode(value);
-      this.last = this.last.next;
+      this.end = this.end.next;
     }
   }
 
   dequeue() {
-    let present = this.head;
+    let current = this.head;
 
-    this.head = present.next;
+    this.head = current.next;
 
-    return present.value;
+    return current.value;
   }
 }
 
