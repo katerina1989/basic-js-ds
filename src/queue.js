@@ -26,13 +26,12 @@ class Queue {
 
  
   enqueue(value) {
-    this.current = new ListNode(value);
-    if (this.head) {
-      this.head = this.current;
-      this.last = this.current;
+    if (this.head === null) {
+      this.head = new ListNode(value);
+      this.last = this.head;
     } else {
-      this.last.next = this.current;
-      this.last = this.current;
+      this.last.next = new ListNode(value);
+      this.last = this.last.next;
     }
   }
 
